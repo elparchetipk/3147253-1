@@ -1,0 +1,248 @@
+/* Estilos Base */
+:root {
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-secondary: #4f46e5;
+  --color-accent: #7c3aed;
+  --color-text: #1f2937;
+  --color-text-light: #6b7280;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f9fafb;
+  --color-border: #e5e7eb;
+  --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --radius: 0.375rem;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: var(--color-bg);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Encabezado */
+header {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Barra de navegación principal */
+.main-nav {
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 1rem;
+}
+
+.pages-nav {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.pages-nav li {
+  margin: 0 1rem;
+}
+
+.pages-nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.pages-nav a:hover {
+  background-color: var(--color-bg-alt);
+}
+
+.pages-nav a.active {
+  color: var(--color-primary);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+/* Navegación por letras */
+.letter-nav {
+  background-color: var(--color-bg-alt);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.letter-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.letter-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
+}
+
+.letter-links a:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Secciones de letras */
+.letter-section {
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.letter-section h2 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-heading);
+}
+
+.term {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.term:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.term h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-secondary);
+}
+
+.term p {
+  color: var(--color-text-light);
+}
+
+/* Botón volver arriba */
+.back-to-top {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.back-to-top:hover {
+  color: var(--color-accent);
+}
+
+.back-to-top::before {
+  content: "↑ ";
+}
+
+/* Pie de página */
+footer {
+  background-color: var(--color-bg-alt);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--color-text-light);
+  margin-top: 3rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .pages-nav a {
+    font-size: 1rem;
+  }
+
+  .letter-links a {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .term {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .pages-nav li {
+    margin: 0 0.5rem;
+  }
+
+  .letter-links {
+    gap: 0.3rem;
+  }
+
+  .letter-links a {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .term h3 {
+    font-size: 1.1rem;
+  }
+}
